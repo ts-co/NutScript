@@ -19,8 +19,6 @@ function nut.item.load(path, baseID, isBaseItem)
 	if (uniqueID) then
 		uniqueID = (isBaseItem and "base_" or "")..uniqueID
 		local item = nut.item.register(uniqueID, baseID, isBaseItem, path)
-		
-		hook.Run("OnItemLoaded", item)
 	elseif (!path:find(".txt")) then
 		ErrorNoHalt(
 			"[NutScript] Item at '"..path.."' follows invalid "..
