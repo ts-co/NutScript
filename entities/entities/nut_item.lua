@@ -154,10 +154,12 @@ else
 		local description = itemTable:getDesc()
 		self:computeDescMarkup(description)
 
+		local color = itemTable:getData("color", nut.config.get("color"))
+
 		nut.util.drawText(
 			L(itemTable.getName and itemTable:getName() or itemTable.name),
 			x, y,
-			colorAlpha(nut.config.get("color"), alpha),
+			colorAlpha(color, alpha),
 			1, 1,
 			nil,
 			alpha * 0.65
